@@ -11,21 +11,20 @@
     $database = new Database();
     $db = $database->getConnection();
     
-    $item = new Employee($db);
+    $item = new Vilt($db);
     
     $data = json_decode(file_get_contents("php://input"));
     
-    $item->id = $data->id;
+    $item->vilt_id = $data->vilt_id;
     
     // employee values
-    $item->name = $data->name;
-    $item->email = $data->email;
-    $item->age = $data->age;
-    $item->designation = $data->designation;
-    $item->created = date('Y-m-d H:i:s');
+    $item->gewicht_glas = $data->gewicht_glas;
+    $item->melding_boolean = $data->melding_boolean;
+    $item->word_afgehandeld = $data->word_afgehandeld;
+
     
-    if($item->updateEmployee()){
-        echo json_encode("Employee data updated.");
+    if($item->updateVilt()){
+        echo json_encode("Vilt data updated.");
     } else{
         echo json_encode("Data could not be updated");
     }

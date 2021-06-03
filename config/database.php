@@ -1,7 +1,7 @@
 <?php 
     class Database {
         private $host = "127.0.0.1";
-        private $database_name = "reviltapi";
+        private $database_name = "revilt";
         private $username = "root";
         private $password = "";
 

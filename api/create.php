@@ -11,19 +11,17 @@
     $database = new Database();
     $db = $database->getConnection();
 
-    $item = new Employee($db);
+    $item = new Vilt($db);
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $item->name = $data->name;
-    $item->email = $data->email;
-    $item->age = $data->age;
-    $item->designation = $data->designation;
-    $item->created = date('Y-m-d H:i:s');
+    $item->gewicht_glas = $data->gewicht_glas;
+    $item->melding_boolean = $data->melding_boolean;
+    $item->word_afgehandeld = $data->word_afgehandeld;
     
-    if($item->createEmployee()){
-        echo 'Employee created successfully.';
+    if($item->createVilt()){
+        echo 'Vilt created successfully.';
     } else{
-        echo 'Employee could not be created.';
+        echo 'Vilt could not be created.';
     }
 ?>

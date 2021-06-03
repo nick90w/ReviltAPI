@@ -11,14 +11,14 @@
     $database = new Database();
     $db = $database->getConnection();
     
-    $item = new Employee($db);
+    $item = new Vilt($db);
     
     $data = json_decode(file_get_contents("php://input"));
     
-    $item->id = $data->id;
+    $item->vilt_id = $data->vilt_id;
     
-    if($item->deleteEmployee()){
-        echo json_encode("Employee deleted.");
+    if($item->deleteVilt()){
+        echo json_encode("Vilt deleted.");
     } else{
         echo json_encode("Data could not be deleted");
     }

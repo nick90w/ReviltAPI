@@ -11,29 +11,27 @@
     $database = new Database();
     $db = $database->getConnection();
 
-    $item = new Employee($db);
+    $item = new Vilt($db);
 
-    $item->id = isset($_GET['id']) ? $_GET['id'] : die();
+    $item->vilt_id = isset($_GET['vilt_id']) ? $_GET['vilt_id'] : die();
   
-    $item->getSingleEmployee();
+    $item->getSingleVilt();
 
-    if($item->name != null){
+    if($item->vilt_id != null){
         // create array
-        $emp_arr = array(
-            "id" =>  $item->id,
-            "name" => $item->name,
-            "email" => $item->email,
-            "age" => $item->age,
-            "designation" => $item->designation,
-            "created" => $item->created
+        $vilt_arr = array(
+            "vilt_id" =>  $item->vilt_id,
+            "gewicht_glas" => $item->gewicht_glas,
+            "melding_boolean" => $item->melding_boolean,
+            "word_afgehandeld" => $item->word_afgehandeld
         );
       
         http_response_code(200);
-        echo json_encode($emp_arr);
+        echo json_encode($vilt_arr);
     }
       
     else{
         http_response_code(404);
-        echo json_encode("Employee not found.");
+        echo json_encode("Vilt not found.");
     }
 ?>
