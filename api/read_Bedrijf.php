@@ -3,37 +3,37 @@
     header("Content-Type: application/json; charset=UTF-8");
     
     include_once '../config/database.php';
-    include_once '../class/vilt.php';
+    include_once '../class/bedrijf.php';
 
     $database = new Database();
     $db = $database->getConnection();
 
-    $items = new Vilt($db);
+    $item = new Bedrijf($db);
 
-    $stmt = $items->getViltInfo();
+    $stmt = $item->getBedrijfInfo();
     $itemCount = $stmt->rowCount();
 
 
-   // echo json_encode($itemCount);
+    echo json_encode($itemCount);
 
     if($itemCount > 0){
         
-        $viltArr = array();
-        $viltArr["body"] = array();
-        $viltArr["itemCount"] = $itemCount;
+        $bedrijfArr = array();
+        $bedrijfArr["body"] = array();
+        $bedrijfArr["itemCount"] = $itemCount;
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $e = array(
-                "vilt_id" => $vilt_id,
-                "gewicht_glas" => $gewicht_glas,
-                "melding_boolean" => $melding_boolean,
-                "word_afgehandeld" => $word_afgehandeld
-            );
+            "Bedrijf_id" =>  $Bedrijf_id,
+            "Naam_bedrijf" => $Naam_bedrijf,
+            "Gebruikersnaam" => $Gebruikersnaam,
+            "Password" => $Password
+        );
 
-            array_push($viltArr["body"], $e);
+            array_push($bedrijfArr["body"], $e);
         }
-        echo json_encode($viltArr);
+        echo json_encode($bedrijfArr);
     }
 
     else{

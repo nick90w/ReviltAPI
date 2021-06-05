@@ -124,5 +124,49 @@
             return false;
         }
 
+        function GetMeldingen(){
+
+                    $sqlQuery = "SELECT
+                        vilt_id, 
+                        gewicht_glas, 
+                        word_afgehandeld
+                      FROM
+                        ". $this->db_table ."
+                    WHERE 
+                       melding_boolean = 1";
+
+            $stmt = $this->conn->prepare($sqlQuery);
+            $stmt->execute();
+            return $stmt;
+
+
+        }
+
+        function SetWord_Afgehandeld(){
+
+                    $sqlQuery = "UPDATE
+                        ". $this->db_table ."
+                    SET 
+                        word_afgehandeld = :word_afgehandeld
+                    WHERE 
+                        vilt_id = :vilt_id";
+        
+            $stmt = $this->conn->prepare($sqlQuery);
+
+            $this->word_afgehandeld=htmlspecialchars(strip_tags($this->word_afgehandeld));
+        
+            // bind data
+            $stmt->bindParam(":word_afgehandeld", $this->word_afgehandeld);
+            $stmt->bindParam(":vilt_id", $this->vilt_id);
+        
+            if($stmt->execute()){
+               return true;
+            }
+            return false;
+
+
+        }
+
+
     }
 ?>

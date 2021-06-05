@@ -10,11 +10,8 @@
 
     $items = new Vilt($db);
 
-    $stmt = $items->getViltInfo();
+    $stmt = $items->GetMeldingen();
     $itemCount = $stmt->rowCount();
-
-
-   // echo json_encode($itemCount);
 
     if($itemCount > 0){
         
@@ -27,7 +24,6 @@
             $e = array(
                 "vilt_id" => $vilt_id,
                 "gewicht_glas" => $gewicht_glas,
-                "melding_boolean" => $melding_boolean,
                 "word_afgehandeld" => $word_afgehandeld
             );
 
