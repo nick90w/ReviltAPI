@@ -110,7 +110,7 @@
         }
 
         // DELETE
-        function deleteVilt(){
+        function deleteBedrijf(){
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE Bedrijf_id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         
