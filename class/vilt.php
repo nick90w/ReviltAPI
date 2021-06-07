@@ -87,7 +87,7 @@
                     SET
                         gewicht_glas = :gewicht_glas, 
                         melding_boolean = :melding_boolean, 
-                        word_afgehandeld = :word_afgehandeld, 
+                        word_afgehandeld = :word_afgehandeld 
                     WHERE 
                         vilt_id = :vilt_id";
         
