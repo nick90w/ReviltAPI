@@ -13,24 +13,15 @@
 
     $item = new Tafel($db);
 
-    $item->tafel_id = isset($_GET['tafel_id']) ? $_GET['tafel_id'] : die();
-  
-    $item->getSingleTafel();
+    $data = json_decode(file_get_contents("php://input"));
 
-    if($item->tafel_id != null){
-        // create array
-        $tafel_arr = array(
-            "tafel_id" =>  $item->tafel_id,
-            "vilt_id" => $item->vilt_id,
-            "bedrijf_id" => $item->bedrijf_id
-        );
-      
-        http_response_code(200);
-        echo json_encode($tafel_arr);
-    }
-      
-    else{
-        http_response_code(404);
-        echo json_encode("Tafel not found.");
+    $item->gewicht_glas = $data->gewicht_glas;
+    $item->melding_boolean = $data->melding_boolean;
+    $item->word_afgehandeld = $data->word_afgehandeld;
+    
+    if($item->createTafel()){
+        echo 'Vilt created successfully.';
+    } else{
+        echo 'Vilt could not be created.';
     }
 ?>
