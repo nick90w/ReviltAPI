@@ -87,7 +87,7 @@
                     SET
                         gewicht_glas = :gewicht_glas, 
                         melding_boolean = :melding_boolean, 
-                        word_afgehandeld = :word_afgehandeld 
+                        word_afgehandeld = :word_afgehandeld
                     WHERE 
                         vilt_id = :vilt_id";
         
@@ -96,7 +96,7 @@
             $this->gewicht_glas=htmlspecialchars(strip_tags($this->gewicht_glas));
             $this->melding_boolean=htmlspecialchars(strip_tags($this->melding_boolean));
             $this->word_afgehandeld=htmlspecialchars(strip_tags($this->word_afgehandeld));
-        
+            
             // bind data
             $stmt->bindParam(":gewicht_glas", $this->gewicht_glas);
             $stmt->bindParam(":melding_boolean", $this->melding_boolean);

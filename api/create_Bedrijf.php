@@ -18,9 +18,9 @@
     $item = new Bedrijf($db);
 
     //$data = json_decode(file_get_contents("php://input"));
-    $Naam_bedrijf = $_GET["Naam_bedrijf"];
-    $GebruikersNaam = $_GET["GebruikersNaam"];
-    $Password = $_GET["Password"];
+    $Naam_bedrijf = $_POST["Naam_bedrijf"];
+    $GebruikersNaam = $_POST["GebruikersNaam"];
+    $Password = $_POST["Password"];
 
     $item->Naam_bedrijf = $Naam_bedrijf;
     $item->Gebruikersnaam = $GebruikersNaam;

@@ -21,10 +21,10 @@
    // $item->Bedrijf_id = $data->Bedrijf_id;
     
     // Bedrijf 
-    $Bedrijf_id = $_GET["Bedrijf_id"];
-    $Naam_bedrijf = $_GET["Naam_bedrijf"];
-    $Gebruikersnaam = $_GET["Gebruikersnaam"];
-    $Password = $_GET["Password"];
+    $Bedrijf_id = $_POST["bedrijf_id"];
+    $Naam_bedrijf = $_POST["Naam_bedrijf"];
+    $Gebruikersnaam = $_POST["GebruikersNaam"];
+    $Password = $_POST["Password"];
 
     $item->Bedrijf_id = $Bedrijf_id;
     $item->Naam_bedrijf = $Naam_bedrijf;

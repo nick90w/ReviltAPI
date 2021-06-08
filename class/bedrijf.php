@@ -124,5 +124,31 @@
             return false;
         }
 
+
+            public function loginBedrijf(){
+            $sqlQuery = "SELECT
+                        Bedrijf_id, 
+                        Naam_bedrijf
+                      FROM
+                        ". $this->db_table ."
+                    WHERE 
+                       Gebruikersnaam = ?
+                       And
+                       Password = ?
+
+                    LIMIT 0,1";
+
+            $stmt = $this->conn->prepare($sqlQuery);
+
+            $stmt->bindParam(1, $this->Gebruikersnaam);
+            $stmt->bindParam(2, $this->Password);
+
+            $stmt->execute();
+
+            $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $this->bedrijf_id = $dataRow['Bedrijf_id'];
+            $this->Naam_bedrijf = $dataRow['Naam_bedrijf'];
+        }     
     }
 ?>

@@ -13,7 +13,7 @@
     
     $item = new Bedrijf($db);
     
-    $Bedrijf_id = $_GET["bedrijf_id"];
+    $Bedrijf_id = $_POST["bedrijf_id"];
 
     //$data = json_decode(file_get_contents("php://input"));
     
