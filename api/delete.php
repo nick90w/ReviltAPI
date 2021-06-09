@@ -13,9 +13,11 @@
     
     $item = new Vilt($db);
     
-    $data = json_decode(file_get_contents("php://input"));
+    //$data = json_decode(file_get_contents("php://input"));
     
-    $item->vilt_id = $data->vilt_id;
+    $vilt_id = $_POST["vilt_id"];
+
+    $item->vilt_id = $vilt_id;
     
     if($item->deleteVilt()){
         echo json_encode("Vilt deleted.");

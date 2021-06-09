@@ -13,14 +13,17 @@
     
     $item = new Vilt($db);
     
-    $data = json_decode(file_get_contents("php://input"));
-    
-    $item->vilt_id = $data->vilt_id;
-    
-    // employee values
-    $item->gewicht_glas = $data->gewicht_glas;
-    $item->melding_boolean = $data->melding_boolean;
-    $item->word_afgehandeld = $data->word_afgehandeld;
+    //$data = json_decode(file_get_contents("php://input"));
+
+    $gewicht_glas = $_POST["gewicht_glas"];
+    $melding_boolean =  $_POST["melding_boolean"];
+    $word_afgehandeld =  $_POST["word_afgehandeld"];
+    $vilt_id =  $_POST["vilt_id"];
+
+    $item->vilt_id = $vilt_id; 
+    $item->gewicht_glas = $gewicht_glas;
+    $item->melding_boolean = $melding_boolean;
+    $item->word_afgehandeld = $word_afgehandeld;
 
     
     if($item->updateVilt()){

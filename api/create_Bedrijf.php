@@ -10,8 +10,6 @@
 
     //test link: http://localhost/ReviltAPI/api/create_Bedrijf.php?Naam_bedrijf=haha&GebruikersNaam=haha&Password=haha
 
-
-
     $database = new Database();
     $db = $database->getConnection();
 

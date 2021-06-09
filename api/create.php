@@ -13,11 +13,15 @@
 
     $item = new Vilt($db);
 
-    $data = json_decode(file_get_contents("php://input"));
+    //$data = json_decode(file_get_contents("php://input"));
 
-    $item->gewicht_glas = $data->gewicht_glas;
-    $item->melding_boolean = $data->melding_boolean;
-    $item->word_afgehandeld = $data->word_afgehandeld;
+    $gewicht_glas = $_POST["gewicht_glas"];
+    $melding_boolean = $_POST["melding_boolean"];
+    $word_afgehandeld = $_POST["word_afgehandeld"];
+
+    $item->gewicht_glas = $gewicht_glas;
+    $item->melding_boolean = $melding_boolean;
+    $item->word_afgehandeld = $word_afgehandeld;
     
     if($item->createVilt()){
         echo 'Vilt created successfully.';
