@@ -31,8 +31,6 @@
         echo json_encode($bedrijf_arr);
         $_SESSION["bedrijf_id"] = $item->bedrijf_id;
         $_SESSION["Naam_bedrijf"] = $item->Naam_bedrijf;
-        echo $_SESSION["Naam_bedrijf"];
-        echo $_SESSION["bedrijf_id"];
     }
       
     else{
