@@ -25,10 +25,10 @@
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $e = array(
-                "vilt_id" => $vilt_id,
-                "gewicht_glas" => $gewicht_glas,
-                "melding_boolean" => $melding_boolean,
-                "word_afgehandeld" => $word_afgehandeld
+                "Vilt_id" => $Vilt_id,
+                "Gewicht_glas" => $Gewicht_glas,
+                "Melding_boolean" => $Melding_boolean,
+                "Word_afgehandeld" => $Word_afgehandeld
             );
 
             array_push($viltArr["body"], $e);

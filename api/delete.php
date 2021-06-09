@@ -15,9 +15,9 @@
     
     //$data = json_decode(file_get_contents("php://input"));
     
-    $vilt_id = $_POST["vilt_id"];
+    $Vilt_id = $_POST["Vilt_id"];
 
-    $item->vilt_id = $vilt_id;
+    $item->Vilt_id = $Vilt_id;
     
     if($item->deleteVilt()){
         echo json_encode("Vilt deleted.");

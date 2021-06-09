@@ -8,7 +8,7 @@
     include_once '../config/database.php';
     include_once '../class/vilt.php';
     
-    // test link http://localhost/ReviltAPI/api/update_Bedrijf.php?vilt_id=1&word_afgehandeld=0
+    // test link http://localhost/ReviltAPI/api/update_Bedrijf.php?Vilt_id=1&Word_afgehandeld=0
 
 
     $database = new Database();
@@ -18,22 +18,22 @@
     
    // $data = json_decode(file_get_contents("php://input"));
     
-   // $item->vilt_id = $data->vilt_id;
+   // $item->Vilt_id = $data->Vilt_id;
     
     // Vilt 
-    $vilt_id = $_GET["vilt_id"];
-    $word_afgehandeld = $_GET["word_afgehandeld"];
+    $Vilt_id = $_GET["Vilt_id"];
+    $Word_afgehandeld = $_GET["Word_afgehandeld"];
 
 
-    $item->vilt_id = $vilt_id;
-    $item->word_afgehandeld = $word_afgehandeld;
+    $item->Vilt_id = $Vilt_id;
+    $item->Word_afgehandeld = $Word_afgehandeld;
     /*
     $item->Naam_bedrijf = $data->Naam_bedrijf;
     $item->Gebruikersnaam = $data->Gebruikersnaam;
     $item->Password = $data->Password; */
 
     
-    if($item->SetWord_Afgehandeld()){
+    if($item->SetWord_afgehandeld()){
         echo json_encode("Vilt data updated.");
     } else{
         echo json_encode("Vilt data could not be updated");

@@ -8,10 +8,10 @@
         private $db_table = "vilt";
 
         // Columns
-        public $vilt_id;
-        public $gewicht_glas;
-        public $melding_boolean;
-        public $word_afgehandeld;
+        public $Vilt_id;
+        public $Gewicht_glas;
+        public $Melding_boolean;
+        public $Word_afgehandeld;
 
         // Db connection
         public function __construct($db){
@@ -20,7 +20,7 @@
 
         // GET ALL
         public function getViltInfo(){
-            $sqlQuery = "SELECT vilt_id, gewicht_glas, melding_boolean, word_afgehandeld FROM " . $this->db_table . "";
+            $sqlQuery = "SELECT Vilt_id, Gewicht_glas, Melding_boolean, Word_afgehandeld FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
             return $stmt;
@@ -31,21 +31,21 @@
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
-                        gewicht_glas = :gewicht_glas, 
-                        melding_boolean = :melding_boolean, 
-                        word_afgehandeld = :word_afgehandeld";
+                        Gewicht_glas = :Gewicht_glas, 
+                        Melding_boolean = :Melding_boolean, 
+                        Word_afgehandeld = :Word_afgehandeld";
         
             $stmt = $this->conn->prepare($sqlQuery);
         
             // sanitize
-            $this->gewicht_glas=htmlspecialchars(strip_tags($this->gewicht_glas));
-            $this->melding_boolean=htmlspecialchars(strip_tags($this->melding_boolean));
-            $this->word_afgehandeld=htmlspecialchars(strip_tags($this->word_afgehandeld));
+            $this->Gewicht_glas=htmlspecialchars(strip_tags($this->Gewicht_glas));
+            $this->Melding_boolean=htmlspecialchars(strip_tags($this->Melding_boolean));
+            $this->Word_afgehandeld=htmlspecialchars(strip_tags($this->Word_afgehandeld));
         
             // bind data
-            $stmt->bindParam(":gewicht_glas", $this->gewicht_glas);
-            $stmt->bindParam(":melding_boolean", $this->melding_boolean);
-            $stmt->bindParam(":word_afgehandeld", $this->word_afgehandeld);
+            $stmt->bindParam(":Gewicht_glas", $this->Gewicht_glas);
+            $stmt->bindParam(":Melding_boolean", $this->Melding_boolean);
+            $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
         
             if($stmt->execute()){
                return true;
@@ -56,28 +56,28 @@
         // READ single
         public function getSingleVilt(){
             $sqlQuery = "SELECT
-                        vilt_id, 
-                        gewicht_glas, 
-                        melding_boolean, 
-                        word_afgehandeld
+                        Vilt_id, 
+                        Gewicht_glas, 
+                        Melding_boolean, 
+                        Word_afgehandeld
                       FROM
                         ". $this->db_table ."
                     WHERE 
-                       vilt_id = ?
+                       Vilt_id = ?
                     LIMIT 0,1";
 
             $stmt = $this->conn->prepare($sqlQuery);
 
-            $stmt->bindParam(1, $this->vilt_id);
+            $stmt->bindParam(1, $this->Vilt_id);
 
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            $this->vilt_id = $dataRow['vilt_id'];
-            $this->gewicht_glas = $dataRow['gewicht_glas'];
-            $this->melding_boolean = $dataRow['melding_boolean'];
-            $this->word_afgehandeld = $dataRow['word_afgehandeld'];
+            $this->Vilt_id = $dataRow['Vilt_id'];
+            $this->Gewicht_glas = $dataRow['Gewicht_glas'];
+            $this->Melding_boolean = $dataRow['Melding_boolean'];
+            $this->Word_afgehandeld = $dataRow['Word_afgehandeld'];
         }        
 
         // UPDATE
@@ -85,23 +85,23 @@
             $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET
-                        gewicht_glas = :gewicht_glas, 
-                        melding_boolean = :melding_boolean, 
-                        word_afgehandeld = :word_afgehandeld
+                        Gewicht_glas = :Gewicht_glas, 
+                        Melding_boolean = :Melding_boolean, 
+                        Word_afgehandeld = :Word_afgehandeld
                     WHERE 
-                        vilt_id = :vilt_id";
+                        Vilt_id = :Vilt_id";
         
             $stmt = $this->conn->prepare($sqlQuery);
         
-            $this->gewicht_glas=htmlspecialchars(strip_tags($this->gewicht_glas));
-            $this->melding_boolean=htmlspecialchars(strip_tags($this->melding_boolean));
-            $this->word_afgehandeld=htmlspecialchars(strip_tags($this->word_afgehandeld));
+            $this->Gewicht_glas=htmlspecialchars(strip_tags($this->Gewicht_glas));
+            $this->Melding_boolean=htmlspecialchars(strip_tags($this->Melding_boolean));
+            $this->Word_afgehandeld=htmlspecialchars(strip_tags($this->Word_afgehandeld));
             
             // bind data
-            $stmt->bindParam(":gewicht_glas", $this->gewicht_glas);
-            $stmt->bindParam(":melding_boolean", $this->melding_boolean);
-            $stmt->bindParam(":word_afgehandeld", $this->word_afgehandeld);
-            $stmt->bindParam(":vilt_id", $this->vilt_id);
+            $stmt->bindParam(":Gewicht_glas", $this->Gewicht_glas);
+            $stmt->bindParam(":Melding_boolean", $this->Melding_boolean);
+            $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
+            $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
             if($stmt->execute()){
                return true;
@@ -111,12 +111,12 @@
 
         // DELETE
         function deleteVilt(){
-            $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE vilt_id = ?";
+            $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE Vilt_id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         
-            $this->vilt_id=htmlspecialchars(strip_tags($this->vilt_id));
+            $this->Vilt_id=htmlspecialchars(strip_tags($this->Vilt_id));
         
-            $stmt->bindParam(1, $this->vilt_id);
+            $stmt->bindParam(1, $this->Vilt_id);
         
             if($stmt->execute()){
                 return true;
@@ -127,13 +127,13 @@
         function GetMeldingen(){
 
                     $sqlQuery = "SELECT
-                        vilt_id, 
-                        gewicht_glas, 
-                        word_afgehandeld
+                        Vilt_id, 
+                        Gewicht_glas, 
+                        Word_afgehandeld
                       FROM
                         ". $this->db_table ."
                     WHERE 
-                       melding_boolean = 1";
+                       Melding_boolean = 1";
 
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -142,22 +142,47 @@
 
         }
 
-        function SetWord_Afgehandeld(){
+        function SetWord_afgehandeld(){
 
                     $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET 
-                        word_afgehandeld = :word_afgehandeld
+                        Word_afgehandeld = :Word_afgehandeld
                     WHERE 
-                        vilt_id = :vilt_id";
+                        Vilt_id = :Vilt_id";
         
             $stmt = $this->conn->prepare($sqlQuery);
 
-            $this->word_afgehandeld=htmlspecialchars(strip_tags($this->word_afgehandeld));
+            $this->Word_afgehandeld=htmlspecialchars(strip_tags($this->Word_afgehandeld));
         
             // bind data
-            $stmt->bindParam(":word_afgehandeld", $this->word_afgehandeld);
-            $stmt->bindParam(":vilt_id", $this->vilt_id);
+            $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
+            $stmt->bindParam(":Vilt_id", $this->Vilt_id);
+        
+            if($stmt->execute()){
+               return true;
+            }
+            return false;
+
+
+        }
+
+        function SendESPData(){
+
+                    $sqlQuery = "UPDATE
+                        ". $this->db_table ."
+                    SET 
+                        Gewicht_glas = :Gewicht_glas
+                    WHERE 
+                        Vilt_id = :Vilt_id";
+        
+            $stmt = $this->conn->prepare($sqlQuery);
+
+            $this->Word_afgehandeld=htmlspecialchars(strip_tags($this->Word_afgehandeld));
+        
+            // bind data
+            $stmt->bindParam(":Gewicht_glas", $this->Word_afgehandeld);
+            $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
             if($stmt->execute()){
                return true;

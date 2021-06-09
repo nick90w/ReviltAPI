@@ -49,6 +49,15 @@
             <p><input type="submit" value="submit" name="submit"></p>
 
 		</form>
+						<!-- GRRRR-->
+		<form action = "login.php" method = "POST">
+			<p><b> login </b></p>
+			<p><input type="text" name="user"> user</p>
+			<p><input type="text" name="pass"> pass</p>
+
+            <p><input type="submit" value="submit" name="submit"></p>
+
+		</form>
 	</body>
 
 

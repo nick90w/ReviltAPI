@@ -8,7 +8,7 @@
     include_once '../config/database.php';
     include_once '../class/vilt.php';
     
-    // test link http://localhost/ReviltAPI/api/update_Bedrijf.php?vilt_id=1&word_afgehandeld=0
+    // test link http://localhost/ReviltAPI/api/update_Bedrijf.php?Vilt_id=1&Word_afgehandeld=0
 
 
     $database = new Database();
@@ -18,15 +18,15 @@
     
    // $data = json_decode(file_get_contents("php://input"));
     
-   // $item->vilt_id = $data->vilt_id;
+   // $item->Vilt_id = $data->Vilt_id;
     
     // Vilt 
-    $vilt_id = $_POST["vilt_id"];
-    $gewicht_glas = $_POST["gewicht_glas"];
+    $Vilt_id = $_POST["Vilt_id"];
+    $Gewicht_glas = $_POST["Gewicht_glas"];
 
 
-    $item->vilt_id = $vilt_id;
-    $item->gewicht_glas = $gewicht_glas;
+    $item->Vilt_id = $Vilt_id;
+    $item->Gewicht_glas = $Gewicht_glas;
     /*
     $item->Naam_bedrijf = $data->Naam_bedrijf;
     $item->Gebruikersnaam = $data->Gebruikersnaam;

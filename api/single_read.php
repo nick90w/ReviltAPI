@@ -13,17 +13,17 @@
 
     $item = new Vilt($db);
 
-    $item->vilt_id = isset($_GET['vilt_id']) ? $_GET['vilt_id'] : die();
+    $item->Vilt_id = isset($_GET['Vilt_id']) ? $_GET['Vilt_id'] : die();
   
     $item->getSingleVilt();
 
-    if($item->vilt_id != null){
+    if($item->Vilt_id != null){
         // create array
         $vilt_arr = array(
-            "vilt_id" =>  $item->vilt_id,
-            "gewicht_glas" => $item->gewicht_glas,
-            "melding_boolean" => $item->melding_boolean,
-            "word_afgehandeld" => $item->word_afgehandeld
+            "Vilt_id" =>  $item->Vilt_id,
+            "Gewicht_glas" => $item->Gewicht_glas,
+            "Melding_boolean" => $item->Melding_boolean,
+            "Word_afgehandeld" => $item->Word_afgehandeld
         );
       
         http_response_code(200);

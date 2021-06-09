@@ -15,15 +15,15 @@
     
     //$data = json_decode(file_get_contents("php://input"));
 
-    $gewicht_glas = $_POST["gewicht_glas"];
-    $melding_boolean =  $_POST["melding_boolean"];
-    $word_afgehandeld =  $_POST["word_afgehandeld"];
-    $vilt_id =  $_POST["vilt_id"];
+    $Gewicht_glas = $_POST["Gewicht_glas"];
+    $Melding_boolean =  $_POST["Melding_boolean"];
+    $Word_afgehandeld =  $_POST["Word_afgehandeld"];
+    $Vilt_id =  $_POST["Vilt_id"];
 
-    $item->vilt_id = $vilt_id; 
-    $item->gewicht_glas = $gewicht_glas;
-    $item->melding_boolean = $melding_boolean;
-    $item->word_afgehandeld = $word_afgehandeld;
+    $item->Vilt_id = $Vilt_id; 
+    $item->Gewicht_glas = $Gewicht_glas;
+    $item->Melding_boolean = $Melding_boolean;
+    $item->Word_afgehandeld = $Word_afgehandeld;
 
     
     if($item->updateVilt()){

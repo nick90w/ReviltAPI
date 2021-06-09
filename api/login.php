@@ -9,14 +9,13 @@
     include_once '../config/database.php';
     include_once '../class/bedrijf.php';
 
-
     $database = new Database();
     $db = $database->getConnection();
 
     $item = new Bedrijf($db);
 
-    $item->Gebruikersnaam = isset($_GET['gebruikersnaam']) ? $_GET['gebruikersnaam'] : die();
-    $item->Password = isset($_GET['password']) ? $_GET['password'] : die();
+    $item->Gebruikersnaam = isset($_POST['user']) ? $_POST['user'] : die();
+    $item->Password = isset($_POST['pass']) ? $_POST['pass'] : die();
   
     $item->loginBedrijf();
 
@@ -29,6 +28,7 @@
       
         http_response_code(200);
         echo json_encode($bedrijf_arr);
+        echo json_encode("login successful");
         $_SESSION["bedrijf_id"] = $item->bedrijf_id;
         $_SESSION["Naam_bedrijf"] = $item->Naam_bedrijf;
     }
