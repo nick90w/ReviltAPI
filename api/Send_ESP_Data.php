@@ -7,8 +7,6 @@
     
     include_once '../config/database.php';
     include_once '../class/vilt.php';
-    
-    // test link http://localhost/ReviltAPI/api/update_Bedrijf.php?Vilt_id=1&Word_afgehandeld=0
 
 
     $database = new Database();

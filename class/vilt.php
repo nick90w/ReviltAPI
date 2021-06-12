@@ -178,16 +178,16 @@
         
             $stmt = $this->conn->prepare($sqlQuery);
 
-            $this->Word_afgehandeld=htmlspecialchars(strip_tags($this->Word_afgehandeld));
-        
+            $this->Gewicht_glas=htmlspecialchars(strip_tags($this->Gewicht_glas));
+            $this->Vilt_id=htmlspecialchars(strip_tags($this->Vilt_id));
             // bind data
-            $stmt->bindParam(":Gewicht_glas", $this->Word_afgehandeld);
+            $stmt->bindParam(":Gewicht_glas", $this->Gewicht_glas);
             $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
-            if($stmt->execute()){
+          if($stmt->execute()){
                return true;
-            }
-            return false;
+          }
+           return false;
 
 
         }

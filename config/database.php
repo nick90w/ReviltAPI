@@ -4,13 +4,14 @@
     class Database {
 
         private $host = "127.0.0.1";
-        //private $database_name;
+       // private $database_name = LoginIntoDB();
         private $username = "root";
         private $password = "";
 
         public $conn;
 
         public function getConnection(){
+           // $database_name = $this->LoginIntoDB();
             $this->conn = null;
             try{
                 $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->LoginIntoDB(), $this->username, $this->password);
@@ -29,8 +30,44 @@
             }
             else
             {
-               // $database_name = "loginbedrijfrevilt";
-               return "loginbedrijfrevilt";
+                 if(isset($_GET["user"]) and isset($_GET["pass"]))
+                 {
+                 $mysqli = new mysqli("localhost", "root", "", "loginbedrijfrevilt");
+                    if($mysqli->connect_error) {
+  			exit('Error connecting to database'); //Should be a message a typical user could understand in production
+		    }          
+                    
+		$user = $_GET["user"];
+		$pass = $_GET["pass"];
+
+                $stmt = $mysqli->prepare("SELECT Naam_bedrijf FROM bedrijf WHERE (Gebruikersnaam = ?) And (Password = ?)");
+                
+		$stmt->bind_param("ss",$user,$pass);
+                
+                $stmt->execute();
+
+		$stmt->store_result();
+		
+		if($stmt->num_rows === 0) exit('No rows');
+		$stmt->bind_result($Naam_bedrijf);
+		while($stmt->fetch()) {
+ 		$Naam_bedrijven[] = $Naam_bedrijf;
+  		
+		}
+		
+		//var_export($Naam_bedrijf);
+		return $Naam_bedrijf;
+		$stmt->close();
+		
+
+            	}	
+                 else
+                 {
+                      // $database_name = "loginbedrijfrevilt";
+                      return "loginbedrijfrevilt";
+                 }
+               
+               
             }
         }
     }
