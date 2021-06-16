@@ -12,7 +12,7 @@ body {
 	width: auto;
 	display: grid;
 	grid-template-columns: 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw;
-	grid-template-rows: 500px 500px 500px 500px 500px 500px 500px 500px 500px 500px 114px;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
 p{
@@ -34,4 +34,139 @@ p{
 	grid-row: 1;
 	padding-top: 14vw;
 	font-family: Arial;
+}
+
+#SocialMediaText {
+	font-size: 2.3vw;
+	grid-column: 2 / 10;
+	grid-row: 2;
+	padding-top: 18vw;
+	font-family: Impact;
+}
+
+#SocialMediaImages {
+	grid-column: 2 / 10;
+	grid-row: 2;
+	padding-top: 21vw;
+}
+
+.SocialMediaIcons {
+	width: 3.75vw;
+	height: auto;
+	padding: 0.4vw;
+}
+
+#TitelTextArea1 {
+	font-size: 3vw;
+	grid-column: 1 / 8;
+	grid-row: 3;
+	padding-top: 12vw;
+	padding-left: 2vw;
+	font-family: Impact;
+}
+
+#TextArea1 {
+	font-size: 2.5vw;
+	grid-column: 1 / 8;
+	grid-row: 3;
+	padding-top: 16vw;
+	padding-left: 2vw;
+	font-family: Arial;
+}
+
+#TitelTextArea2 {
+	font-size: 3vw;
+	grid-column: 11 / 18;
+	grid-row: 3;
+	padding-top: 3vw;
+	padding-left: 1.75vw;
+	font-family: Impact;
+}
+
+#TextArea2 {
+	font-size: 2.5vw;
+	grid-column: 11 / 18;
+	grid-row: 3;
+	padding-top: 7vw;
+	padding-left: 1.75vw;
+	font-family: Arial;
+}
+
+#TitelTextArea3 {
+	font-size: 3vw;
+	grid-column: 1 / 8;
+	grid-row: 4;
+	padding-top: 18vw;
+	padding-left: 2vw;
+	font-family: Impact;
+}
+
+#TextArea3 {
+	font-size: 2.5vw;
+	grid-column: 1 / 8;
+	grid-row: 4;
+	padding-top: 22vw;
+	padding-left: 2vw;
+	font-family: Arial;
+}
+
+#TitelTextArea4 {
+	font-size: 3vw;
+	grid-column: 11 / 18;
+	grid-row: 5;
+	padding-top: 13vw;
+	padding-left: 1.75vw;
+	font-family: Impact;
+}
+
+#TextArea4 {
+	font-size: 2.5vw;
+	grid-column: 11 / 18;
+	grid-row: 5;
+	padding-top: 17vw;
+	padding-left: 1.75vw;
+	font-family: Arial;
+}
+
+#MeetOurTeamTitle {
+	font-size: 3.5vw;
+	grid-column: 8 / 14;
+	grid-row: 7;
+	padding-top: 21vw;
+	padding-left: 2.75vw;
+	font-family: Impact;
+}
+
+
+
+#HeaderTextTitle {
+	font-size: 2vw;
+	grid-column: 1/ 8;
+	grid-row: 10;
+	padding-top: 15vw;
+	padding-left: 2vw;
+	font-family: Impact;
+}
+
+#HeaderText {
+	font-size: 1.75vw;
+	grid-column: 1 / 8;
+	grid-row: 10;
+	padding-top: 18vw;
+	padding-left: 2vw;
+	font-family: Arial;
+}
+
+#HeaderImage {
+	grid-column: 18 / 20;
+	grid-row: 10;
+	padding-top: 15.5vw;
+	padding-left: 12vw;
+	width: 9vw;
+	height: auto;
+}
+#ImageHeader {
+	grid-column: 16 / 18;
+	grid-row: 10;
+
 }
