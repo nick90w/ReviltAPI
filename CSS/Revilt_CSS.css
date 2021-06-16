@@ -1,0 +1,37 @@
+body {
+	background-image: url("../images/mockupwebsiteEmptyBlueprint.png");
+	background-color: grey;
+	height: auto;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#container {
+	height: 263vw;
+	width: auto;
+	display: grid;
+	grid-template-columns: 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw;
+	grid-template-rows: 500px 500px 500px 500px 500px 500px 500px 500px 500px 500px 114px;
+}
+
+p{
+	color: white;
+	margin: auto;
+}
+
+#Title {
+	font-size: 8vw;
+	grid-column: 2 / 8;
+	grid-row: 1;
+	padding-top: 4vw;
+	font-family: Impact;
+}
+
+#Text_Under_Title {
+	font-size: 2.5vw;
+	grid-column: 2 / 10;
+	grid-row: 1;
+	padding-top: 14vw;
+	font-family: Arial;
+}
