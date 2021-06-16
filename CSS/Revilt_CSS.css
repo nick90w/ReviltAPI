@@ -36,6 +36,21 @@ p{
 	font-family: Arial;
 }
 
+#ImageHead {
+	grid-column: 10 / 16;
+	grid-row: 1;
+}
+
+#HeadImage {
+	grid-column: 10 / 16;
+	grid-row: 1;
+	padding-top: 16vw;
+	padding-left: 6.75vw;
+	width: 34vw;
+	height: auto;
+}
+
+
 #whiteframe {
 	grid-column: 10 / 16;
 	grid-row: 1;
@@ -44,11 +59,15 @@ p{
 #whiteframeImage {
 	grid-column: 10 / 16;
 	grid-row: 1;
-	padding-top: 4vw;
+	padding-top: 1vw;
 	padding-left: 0vw;
-	width: 45vw;
+	width: 47vw;
 	height: auto;
 }
+
+
+
+
 
 
 	#SocialMediaText {
