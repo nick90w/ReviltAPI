@@ -54,6 +54,7 @@ h2 {
 	padding-left: 6.75vw;
 	width: 34vw;
 	height: auto;
+
 }
 
 
@@ -69,11 +70,8 @@ h2 {
 	padding-left: 0vw;
 	width: 47vw;
 	height: auto;
+	
 }
-
-
-
-
 
 
 	#SocialMediaText {
@@ -94,7 +92,33 @@ h2 {
 	width: 3.75vw;
 	height: auto;
 	padding: 0.4vw;
+	/*position: relative;
+		float: left; */
 }
+
+.SocialMediaIcons:hover {
+	cursor: pointer;
+	
+}
+/*
+#Thanks {
+	position: absolute;
+	opacity: 0;
+	top: auto;
+	bottom: auto;
+	left: auto;
+	right: auto;
+	float: left;
+	font-size: 2vw;
+	font-family: Arial;
+	margin-left: 10vw;
+	padding-top: 1vw;
+}
+*/
+#Thanks:hover {
+	opacity: 1;
+}
+
 
 #TitelTextArea1 {
 	font-size: 3vw;
@@ -179,19 +203,17 @@ h2 {
 
 #PeopleList {
 	padding-top: 3vw;
-	grid-column: 4 / 18;
+	grid-column: 5 / 18;
 	grid-row: 8 / 9;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	
 }
-.PeopleListObject{
-
+.PeopleListObject {
+	font-size: 1.2vw;
 	width: 50%;
 	height: 50%;
-	
-
 }
 
 .PeopleListImage{
@@ -204,21 +226,23 @@ h2 {
 
 
 #HeaderTextTitle {
-	font-size: 2vw;
+	font-size: 1.5vw;
 	grid-column: 1/ 8;
 	grid-row: 10;
 	padding-top: 15vw;
 	padding-left: 2vw;
-	font-family: Impact;
+	font-family: Impact Arial;
+	
 }
 
 #HeaderText {
-	font-size: 1.75vw;
+	font-size: 1vw;
 	grid-column: 1 / 8;
 	grid-row: 10;
 	padding-top: 18vw;
 	padding-left: 2vw;
 	font-family: Arial;
+	
 }
 
 #HeaderImage {
@@ -251,3 +275,30 @@ h2 {
 
 
 }
+
+/*   CSS  FOR  ONLINE  LIBS   */
+
+span{
+	margin: auto;
+	color: white;
+
+}
+
+.ml10 {
+	position: relative;
+	font-weight: 400;
+	font-size: 2.5vw;
+}
+
+.ml10 .text-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+.ml10 .letter {
+		display: inline-block;
+		line-height: 1em;
+		transform-origin: 0 0;
+	}
+
