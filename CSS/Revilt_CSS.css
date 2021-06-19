@@ -20,6 +20,12 @@ p{
 	margin: auto;
 }
 
+h2 {
+	color: white;
+	margin: auto;
+	font-family: Impact;
+}
+
 #Title {
 	font-size: 8vw;
 	grid-column: 2 / 8;
@@ -44,7 +50,7 @@ p{
 #HeadImage {
 	grid-column: 10 / 16;
 	grid-row: 1;
-	padding-top: 16vw;
+	padding-top: 15vw;
 	padding-left: 6.75vw;
 	width: 34vw;
 	height: auto;
@@ -171,6 +177,30 @@ p{
 	font-family: Impact;
 }
 
+#PeopleList {
+	padding-top: 3vw;
+	grid-column: 4 / 18;
+	grid-row: 8 / 9;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	
+}
+.PeopleListObject{
+
+	width: 50%;
+	height: 50%;
+	
+
+}
+
+.PeopleListImage{
+	
+	float: left;
+	height: 85%;
+	padding-right: 2vw;
+
+}
 
 
 #HeaderTextTitle {
@@ -202,5 +232,22 @@ p{
 #ImageHeader {
 	grid-column: 16 / 18;
 	grid-row: 10;
+
+}
+
+
+
+
+.Hidden {
+	opacity: 0;
+	transform: scale(0.1);
+	transition: all 1s ease-in-out;
+}
+
+.active{
+	opacity: 1;
+	transform: scale(1);
+
+
 
 }
