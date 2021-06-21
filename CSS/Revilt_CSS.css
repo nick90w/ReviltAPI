@@ -5,6 +5,7 @@ body {
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	cursor: url("../images/BeerCursor.png"),auto;
 }
 
 #container {
@@ -130,12 +131,13 @@ h2 {
 }
 
 #TextArea1 {
-	font-size: 2.5vw;
+	font-size: 1.5vw;
 	grid-column: 1 / 8;
 	grid-row: 3;
 	padding-top: 16vw;
 	padding-left: 2vw;
 	font-family: Arial;
+	
 }
 
 #TitelTextArea2 {
@@ -148,12 +150,20 @@ h2 {
 }
 
 #TextArea2 {
-	font-size: 2.5vw;
+	font-size: 1.5vw;
 	grid-column: 11 / 18;
 	grid-row: 3;
 	padding-top: 7vw;
 	padding-left: 1.75vw;
 	font-family: Arial;
+}
+
+#ViltBrainImage{
+
+	padding-top: 3vw;
+	height: 28vw;
+
+
 }
 
 #TitelTextArea3 {
@@ -166,12 +176,20 @@ h2 {
 }
 
 #TextArea3 {
-	font-size: 2.5vw;
+	font-size: 1.5vw;
 	grid-column: 1 / 8;
 	grid-row: 4;
 	padding-top: 22vw;
 	padding-left: 2vw;
 	font-family: Arial;
+}
+
+#PositiveImage
+{
+	height: 30vw;
+	padding-top: 10vw;
+
+
 }
 
 #TitelTextArea4 {
@@ -184,13 +202,26 @@ h2 {
 }
 
 #TextArea4 {
-	font-size: 2.5vw;
-	grid-column: 11 / 18;
+	font-size: 1.5vw;
+	grid-column: 11 / 20;
 	grid-row: 5;
 	padding-top: 17vw;
 	padding-left: 1.75vw;
 	font-family: Arial;
 }
+
+#AppMeldingenImage {
+	float: right;
+	height: 33vw;
+	padding-left: 1vw;
+}
+
+#TableImage {
+	float: left;
+	height: 15vw;
+	padding-top: 20vw;
+}
+
 
 #MeetOurTeamTitle {
 	font-size: 3.5vw;
