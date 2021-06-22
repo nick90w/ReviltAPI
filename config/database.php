@@ -25,17 +25,19 @@
         public function LoginIntoDB(){
             if(isset($_SESSION["bedrijf_id"]) and isset($_SESSION["Naam_bedrijf"]))
             {
-                //$database_name = $_SESSION;
+                //$database_name = "";
                 return $_SESSION["Naam_bedrijf"];
             }
             else
             {
+
                  if(isset($_GET["user"]) and isset($_GET["pass"]))
                  {
-                 $mysqli = new mysqli("localhost", "root", "", "loginbedrijfrevilt");
+
+                    $mysqli = new mysqli("localhost", "root", "", "loginbedrijfrevilt");
                     if($mysqli->connect_error) {
-  			exit('Error connecting to database'); //Should be a message a typical user could understand in production
-		    }          
+  		exit('Error connecting to database'); 
+		}          
                     
 		$user = $_GET["user"];
 		$pass = $_GET["pass"];
@@ -54,12 +56,11 @@
  		$Naam_bedrijven[] = $Naam_bedrijf;
   		
 		}
-		
-		//var_export($Naam_bedrijf);
+
 		return $Naam_bedrijf;
 		$stmt->close();
-		
 
+                    // return "loginbedrijfrevilt";
             	}	
                  else
                  {
@@ -70,6 +71,7 @@
                
             }
         }
+
     }
 
 ?>

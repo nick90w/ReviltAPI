@@ -124,6 +124,9 @@
             return false;
         }
 
+
+        // Functie voor krijgen van de Meldingen
+
         function GetMeldingen(){
 
                     $sqlQuery = "SELECT
@@ -141,6 +144,9 @@
 
 
         }
+
+
+        // Functie voor het op afgehandeld zetten van de meldingen.
 
         function SetWord_afgehandeld(){
 
@@ -166,6 +172,36 @@
 
 
         }
+
+         // Functie voor het op afgehandeld zetten van de meldingen.
+
+        function Set_MeldingBoolean(){
+
+                    $sqlQuery = "UPDATE
+                        ". $this->db_table ."
+                    SET 
+                        Melding_boolean = :Melding_boolean
+                    WHERE 
+                        Vilt_id = :Vilt_id";
+        
+            $stmt = $this->conn->prepare($sqlQuery);
+
+            $this->Melding_boolean=htmlspecialchars(strip_tags($this->Melding_boolean));
+        
+            // bind data
+            $stmt->bindParam(":Melding_boolean", $this->Melding_boolean);
+            $stmt->bindParam(":Vilt_id", $this->Vilt_id);
+        
+            if($stmt->execute()){
+               return true;
+            }
+            return false;
+
+
+        }
+
+        // functie voor het wegschrijven van de esp data
+
 
         function SendESPData(){
 

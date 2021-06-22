@@ -1,0 +1,29 @@
+<?php
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Max-Age: 3600");
+    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+    
+    include_once '../config/database.php';
+    include_once '../class/vilt.php';
+ 
+    $database = new Database();
+    $db = $database->getConnection();
+    
+    $item = new Vilt($db);
+
+    // Vilt 
+    $Vilt_id = $_POST["Vilt_id"];
+    $Melding_boolean = $_POST["Melding_boolean"];
+
+
+    $item->Vilt_id = $Vilt_id;
+    $item->Melding_boolean = $Melding_boolean;
+    
+    if($item->Set_MeldingBoolean()){
+        echo json_encode("Vilt data updated.");
+    } else{
+        echo json_encode("Vilt data could not be updated");
+    }
+?>

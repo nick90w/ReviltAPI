@@ -124,7 +124,7 @@
             return false;
         }
 
-
+        // Login function
             public function loginBedrijf(){
             $sqlQuery = "SELECT
                         Bedrijf_id, 
