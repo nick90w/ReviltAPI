@@ -2,20 +2,27 @@ body {
 	background-image: url("../images/mockupwebsiteEmptyBlueprint.png");
 	background-color: grey;
 	height: auto;
-	width: 100%;
+	width: auto;
 	background-size: cover;
 	background-repeat: no-repeat;
 	cursor: url("../images/BeerCursor.png"),auto;
+	
 	overflow-x: hidden;
+	
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
-#container {
-	height: 263vw;
-	width: auto;
-	display: grid;
-	grid-template-columns: 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw;
-	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+
+	#container {
+		height: 263vw;
+		width: auto;
+		display: grid;
+		grid-template-columns: 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw;
+		grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	}
 
 p{
 	color: white;
@@ -50,20 +57,40 @@ a {
 	font-family: Arial;
 }
 
+
+
+
 #ImageHead {
 	grid-column: 10 / 16;
 	grid-row: 1;
 }
 
 #HeadImage {
-	grid-column: 10 / 16;
-	grid-row: 1;
+
 	padding-top: 15vw;
 	padding-left: 6.75vw;
 	width: 34vw;
 	height: auto;
 
 }
+
+#HeadVid {
+	
+	padding-top: 16vw;
+	padding-left: 3vw;
+	width: 36vw;
+	height: auto;
+	
+}
+
+.SlideShowImage {
+	padding-top: 15vw;
+	padding-left: 6.75vw;
+	width: 34vw;
+	height: auto;
+	
+}
+
 
 
 #whiteframe {
@@ -122,10 +149,11 @@ a {
 	margin-left: 10vw;
 	padding-top: 1vw;
 }
-*/
+
 #Thanks:hover {
 	opacity: 1;
 }
+*/
 
 
 #TitelTextArea1 {
@@ -182,20 +210,20 @@ a {
 
 
 #ContactTitel {
-	font-size: 2vw;
+	font-size: 1.9vw;
 	grid-column: 11 / 20;
 	grid-row: 4;
-	padding-top: 24vw;
-	padding-left: 25vw;
+	padding-top: 25vw;
+	padding-left: 26vw;
 	font-family: Impact;
 }
 
 #ContactArea {
-	font-size: 1.5vw;
+	font-size: 1.4vw;
 	grid-column: 11 / 20;
 	grid-row: 4;
-	padding-top: 27vw;
-	padding-left: 25vw;
+	padding-top: 28vw;
+	padding-left: 26vw;
 	font-family: Arial;
 }
 
@@ -294,7 +322,7 @@ a {
 	font-size: 1.5vw;
 	grid-column: 1/ 8;
 	grid-row: 10;
-	padding-top: 15vw;
+	padding-top: 16vw;
 	padding-left: 2vw;
 	font-family: Impact Arial;
 	
@@ -304,7 +332,7 @@ a {
 	font-size: 1vw;
 	grid-column: 1 / 8;
 	grid-row: 10;
-	padding-top: 18vw;
+	padding-top: 19vw;
 	padding-left: 2vw;
 	font-family: Arial;
 	
@@ -313,7 +341,7 @@ a {
 #HeaderImage {
 	grid-column: 18 / 20;
 	grid-row: 10;
-	padding-top: 15.5vw;
+	padding-top: 16.5vw;
 	padding-left: 12vw;
 	width: 9vw;
 	height: auto;
