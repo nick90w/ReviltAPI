@@ -6,6 +6,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	cursor: url("../images/BeerCursor.png"),auto;
+	overflow-x: hidden;
 }
 
 #container {
@@ -173,7 +174,7 @@ a {
 
 #ViltBrainImage{
 
-	padding-top: 3vw;
+	padding-top: 2vw;
 	height: 28vw;
 
 
