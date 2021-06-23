@@ -27,6 +27,12 @@ h2 {
 	font-family: Impact;
 }
 
+a {
+	color: white;
+	text-decoration: none;
+}
+
+
 #Title {
 	font-size: 8vw;
 	grid-column: 2 / 8;
@@ -140,6 +146,13 @@ h2 {
 	
 }
 
+#SpeedBeerImage {
+	
+	height: 19vw;
+	padding-left: 16vw;
+}
+
+
 #TitelTextArea2 {
 	font-size: 3vw;
 	grid-column: 11 / 18;
@@ -165,6 +178,26 @@ h2 {
 
 
 }
+
+
+#ContactTitel {
+	font-size: 2vw;
+	grid-column: 11 / 20;
+	grid-row: 4;
+	padding-top: 24vw;
+	padding-left: 25vw;
+	font-family: Impact;
+}
+
+#ContactArea {
+	font-size: 1.5vw;
+	grid-column: 11 / 20;
+	grid-row: 4;
+	padding-top: 27vw;
+	padding-left: 25vw;
+	font-family: Arial;
+}
+
 
 #TitelTextArea3 {
 	font-size: 3vw;
