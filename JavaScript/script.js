@@ -39,9 +39,9 @@ anime.timeline({ loop: true })
 
 //=========================================
 
-var i = 0; 			// Start Point
+var i = 0; 			// Start punt
 var images = [];	// Images Array
-var time = 5000;	// Time Between Switch
+var time = 5000;	// Tijd tot volgende Image
 
 // Image List
 images[0] = "../SlideShowImages/DummyImage.jpg";
@@ -51,18 +51,15 @@ images[1] = "../SlideShowImages/Beertap.jpg";
 function changeImg() {
     document.SlideShowImage.src = images[i];
 
-    // Check If Index Is Under Max
     if (i < images.length - 1) {
-        // Add 1 to Index
+
         i++;
     } else {
-        // Reset Back To O
+
         i = 0;
     }
 
-    // Run function every x seconds
     setTimeout("changeImg()", time);
 }
 
-// Run function when page loads
 window.onload = changeImg;
