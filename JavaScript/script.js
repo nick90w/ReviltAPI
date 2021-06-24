@@ -45,7 +45,7 @@ var time = 5000;	// Time Between Switch
 
 // Image List
 images[0] = "../SlideShowImages/DummyImage.jpg";
-images[1] = "../SlideShowImages/JonkoLucas.jpg";
+images[1] = "../SlideShowImages/Beertap.jpg";
 
 // Change Image
 function changeImg() {
