@@ -31,7 +31,7 @@
             else
             {
 
-                 if(isset($_GET["user"]) and isset($_GET["pass"]))
+                 if(isset($_POST["user"]) and isset($_POST["pass"]))
                  {
 
                     $mysqli = new mysqli("localhost", "root", "", "loginbedrijfrevilt");
@@ -39,8 +39,8 @@
   		exit('Error connecting to database'); 
 		}          
                     
-		$user = $_GET["user"];
-		$pass = $_GET["pass"];
+		$user = $_POST["user"];
+		$pass = $_POST["pass"];
 
                 $stmt = $mysqli->prepare("SELECT Naam_bedrijf FROM bedrijf WHERE (Gebruikersnaam = ?) And (Password = ?)");
                 
