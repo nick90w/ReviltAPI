@@ -15,13 +15,14 @@
     
     $tafel_id = $_GET["tafel_id"];
 
-    //$data = json_decode(file_get_contents("php://input"));
-    
     $item->tafel_id = $tafel_id;
     
-    if($item->deleteTafel()){
+    if($item->deleteTafel())
+    {
         echo json_encode("Tafel deleted.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Data could not be deleted");
     }
 ?>

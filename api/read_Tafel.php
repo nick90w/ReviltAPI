@@ -13,16 +13,15 @@
     $stmt = $items->getTafelInfo();
     $itemCount = $stmt->rowCount();
 
-
-   // echo json_encode($itemCount);
-
-    if($itemCount > 0){
+    if($itemCount > 0)
+    {
         
         $tafelArr = array();
         $tafelArr["body"] = array();
         $tafelArr["itemCount"] = $itemCount;
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
             extract($row);
             $e = array(
                 "tafel_id" => $tafel_id,
@@ -35,7 +34,8 @@
         echo json_encode($tafelArr);
     }
 
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode(
             array("message" => "No record found.")

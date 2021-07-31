@@ -14,12 +14,14 @@
         public $Word_afgehandeld;
 
         // Db connection
-        public function __construct($db){
+        public function __construct($db)
+        {
             $this->conn = $db;
         }
 
         // GET ALL
-        public function getViltInfo(){
+        public function getViltInfo()
+        {
             $sqlQuery = "SELECT Vilt_id, Gewicht_glas, Melding_boolean, Word_afgehandeld FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -27,7 +29,8 @@
         }
 
         // CREATE
-        public function createVilt(){
+        public function createVilt()
+        {
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
@@ -47,14 +50,16 @@
             $stmt->bindParam(":Melding_boolean", $this->Melding_boolean);
             $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }
 
         // READ single
-        public function getSingleVilt(){
+        public function getSingleVilt()
+        {
             $sqlQuery = "SELECT
                         Vilt_id, 
                         Gewicht_glas, 
@@ -81,7 +86,8 @@
         }        
 
         // UPDATE
-        public function updateVilt(){
+        public function updateVilt()
+        {
             $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET
@@ -103,14 +109,16 @@
             $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
             $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }
 
         // DELETE
-        function deleteVilt(){
+        function deleteVilt()
+        {
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE Vilt_id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         
@@ -118,7 +126,8 @@
         
             $stmt->bindParam(1, $this->Vilt_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                 return true;
             }
             return false;
@@ -127,7 +136,8 @@
 
         // Functie voor krijgen van de Meldingen
 
-        function GetMeldingen(){
+        function GetMeldingen()
+        {
 
                     $sqlQuery = "SELECT
                         Vilt_id, 
@@ -148,7 +158,8 @@
 
         // Functie voor het op afgehandeld zetten van de meldingen.
 
-        function SetWord_afgehandeld(){
+        function SetWord_afgehandeld()
+        {
 
                     $sqlQuery = "UPDATE
                         ". $this->db_table ."
@@ -165,7 +176,8 @@
             $stmt->bindParam(":Word_afgehandeld", $this->Word_afgehandeld);
             $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
@@ -175,7 +187,8 @@
 
          // Functie voor het op afgehandeld zetten van de meldingen.
 
-        function Set_MeldingBoolean(){
+        function Set_MeldingBoolean()
+        {
 
                     $sqlQuery = "UPDATE
                         ". $this->db_table ."
@@ -192,7 +205,8 @@
             $stmt->bindParam(":Melding_boolean", $this->Melding_boolean);
             $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
@@ -203,7 +217,8 @@
         // functie voor het wegschrijven van de esp data
 
 
-        function SendESPData(){
+        function SendESPData()
+        {
 
                     $sqlQuery = "UPDATE
                         ". $this->db_table ."
@@ -220,7 +235,8 @@
             $stmt->bindParam(":Gewicht_glas", $this->Gewicht_glas);
             $stmt->bindParam(":Vilt_id", $this->Vilt_id);
         
-          if($stmt->execute()){
+          if($stmt->execute())
+          {
                return true;
           }
            return false;

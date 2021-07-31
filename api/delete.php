@@ -13,15 +13,16 @@
     
     $item = new Vilt($db);
     
-    //$data = json_decode(file_get_contents("php://input"));
-    
     $Vilt_id = $_POST["Vilt_id"];
 
     $item->Vilt_id = $Vilt_id;
     
-    if($item->deleteVilt()){
+    if($item->deleteVilt())
+    {
         echo json_encode("Vilt deleted.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Data could not be deleted");
     }
 ?>

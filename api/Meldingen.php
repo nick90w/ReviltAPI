@@ -13,13 +13,15 @@
     $stmt = $items->GetMeldingen();
     $itemCount = $stmt->rowCount();
 
-    if($itemCount > 0){
+    if($itemCount > 0)
+    {
         
         $viltArr = array();
         $viltArr["body"] = array();
         $viltArr["itemCount"] = $itemCount;
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
             extract($row);
             $e = array(
                 "Vilt_id" => $Vilt_id,
@@ -32,7 +34,8 @@
         echo json_encode($viltArr);
     }
 
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode(
             array("message" => "No record found.")

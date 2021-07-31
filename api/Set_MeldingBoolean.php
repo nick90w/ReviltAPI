@@ -21,9 +21,12 @@
     $item->Vilt_id = $Vilt_id;
     $item->Melding_boolean = $Melding_boolean;
     
-    if($item->Set_MeldingBoolean()){
+    if($item->Set_MeldingBoolean())
+    {
         echo json_encode("Vilt data updated.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Vilt data could not be updated");
     }
 ?>

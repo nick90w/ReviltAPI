@@ -14,12 +14,14 @@
         public $Password;
 
         // Db connection
-        public function __construct($db){
+        public function __construct($db)
+        {
             $this->conn = $db;
         }
 
         // GET ALL
-        public function getBedrijfInfo(){
+        public function getBedrijfInfo()
+        {
             $sqlQuery = "SELECT Bedrijf_id, Naam_bedrijf, Gebruikersnaam, Password FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -27,7 +29,8 @@
         }
 
         // CREATE
-        public function createBedrijf(){
+        public function createBedrijf()
+        {
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
@@ -47,14 +50,16 @@
             $stmt->bindParam(":Gebruikersnaam", $this->Gebruikersnaam);
             $stmt->bindParam(":Password", $this->Password);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }
 
         // READ single
-        public function getSingleBedrijf(){
+        public function getSingleBedrijf()
+        {
             $sqlQuery = "SELECT
                         Bedrijf_id, 
                         Naam_bedrijf, 
@@ -81,7 +86,8 @@
         }        
 
         // UPDATE
-        public function updateBedrijf(){
+        public function updateBedrijf()
+        {
             $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET
@@ -103,14 +109,16 @@
             $stmt->bindParam(":Password", $this->Password);
             $stmt->bindParam(":Bedrijf_id", $this->Bedrijf_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }
 
         // DELETE
-        function deleteBedrijf(){
+        function deleteBedrijf()
+        {
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE Bedrijf_id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         
@@ -118,14 +126,16 @@
         
             $stmt->bindParam(1, $this->Bedrijf_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                 return true;
             }
             return false;
         }
 
         // Login function
-            public function loginBedrijf(){
+            public function loginBedrijf()
+            {
             $sqlQuery = "SELECT
                         Bedrijf_id, 
                         Naam_bedrijf

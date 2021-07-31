@@ -13,12 +13,14 @@
         public $bedrijf_id;
 
         // Db connection
-        public function __construct($db){
+        public function __construct($db)
+        {
             $this->conn = $db;
         }
 
         // GET ALL
-        public function getTafelInfo(){
+        public function getTafelInfo()
+        {
             $sqlQuery = "SELECT tafel_id, vilt_id, bedrijf_id FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -26,7 +28,8 @@
         }
 
         // CREATE
-       /* public function createTafel(){
+       /* public function createTafel()
+       {
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
@@ -46,14 +49,16 @@
             $stmt->bindParam(":Gebruikersnaam", $this->Gebruikersnaam);
             $stmt->bindParam(":Password", $this->Password);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }*/
 
         // READ single
-        public function getSingleTafel(){
+        public function getSingleTafel()
+        {
             $sqlQuery = "SELECT
                         tafel_id, 
                         vilt_id, 
@@ -78,7 +83,8 @@
         }        
 
         // UPDATE
-        public function updateTafel(){
+        public function updateTafel()
+        {
             $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET
@@ -97,14 +103,16 @@
             $stmt->bindParam(":bedrijf_id", $this->bedrijf_id);
             $stmt->bindParam(":tafel_id", $this->tafel_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                return true;
             }
             return false;
         }
 
         // DELETE
-        function deleteTafel(){
+        function deleteTafel()
+        {
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE tafel_id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         
@@ -112,7 +120,8 @@
         
             $stmt->bindParam(1, $this->tafel_id);
         
-            if($stmt->execute()){
+            if($stmt->execute())
+            {
                 return true;
             }
             return false;

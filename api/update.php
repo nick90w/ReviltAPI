@@ -13,8 +13,6 @@
     
     $item = new Vilt($db);
     
-    //$data = json_decode(file_get_contents("php://input"));
-
     $Gewicht_glas = $_POST["Gewicht_glas"];
     $Melding_boolean =  $_POST["Melding_boolean"];
     $Word_afgehandeld =  $_POST["Word_afgehandeld"];
@@ -25,10 +23,12 @@
     $item->Melding_boolean = $Melding_boolean;
     $item->Word_afgehandeld = $Word_afgehandeld;
 
-    
-    if($item->updateVilt()){
+    if($item->updateVilt())
+    {
         echo json_encode("Vilt data updated.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Data could not be updated");
     }
 ?>

@@ -13,11 +13,7 @@
     $db = $database->getConnection();
     
     $item = new Vilt($db);
-    
-   // $data = json_decode(file_get_contents("php://input"));
-    
-   // $item->Vilt_id = $data->Vilt_id;
-    
+
     // Vilt 
     $Vilt_id = $_POST["Vilt_id"];
     $Gewicht_glas = $_POST["Gewicht_glas"];
@@ -25,15 +21,13 @@
 
     $item->Vilt_id = $Vilt_id;
     $item->Gewicht_glas = $Gewicht_glas;
-    /*
-    $item->Naam_bedrijf = $data->Naam_bedrijf;
-    $item->Gebruikersnaam = $data->Gebruikersnaam;
-    $item->Password = $data->Password; */
 
-    
-    if($item->SendESPData()){
+    if($item->SendESPData())
+    {
         echo json_encode("Vilt data updated.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Vilt data could not be updated");
     }
 ?>

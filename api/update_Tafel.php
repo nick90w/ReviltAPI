@@ -29,9 +29,12 @@
 
 
     
-    if($item->updateTafel()){
+    if($item->updateTafel())
+    {
         echo json_encode("Tafel data updated.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Data could not be updated");
     }
 ?>

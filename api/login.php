@@ -19,7 +19,8 @@
   
     $item->loginBedrijf();
 
-    if(!empty($item->bedrijf_id) and !empty($item->Naam_bedrijf)){
+    if(!empty($item->bedrijf_id) and !empty($item->Naam_bedrijf))
+    {
         // create array
         $bedrijf_arr = array(
             "bedrijf_id" =>  $item->bedrijf_id,
@@ -33,7 +34,8 @@
         $_SESSION["Naam_bedrijf"] = $item->Naam_bedrijf;
     }
       
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode("Bedrijf not found.");
     }

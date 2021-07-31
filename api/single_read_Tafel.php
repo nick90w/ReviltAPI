@@ -17,7 +17,8 @@
   
     $item->getSingleTafel();
 
-    if($item->tafel_id != null){
+    if($item->tafel_id != null)
+    {
         // create array
         $tafel_arr = array(
             "tafel_id" =>  $item->tafel_id,
@@ -29,7 +30,8 @@
         echo json_encode($tafel_arr);
     }
       
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode("Tafel not found.");
     }

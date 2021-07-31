@@ -17,7 +17,8 @@
   
     $item->getSingleVilt();
 
-    if($item->Vilt_id != null){
+    if($item->Vilt_id != null)
+    {
         // create array
         $vilt_arr = array(
             "Vilt_id" =>  $item->Vilt_id,
@@ -30,7 +31,8 @@
         echo json_encode($vilt_arr);
     }
       
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode("Vilt not found.");
     }

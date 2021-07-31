@@ -17,7 +17,8 @@
   
     $item->getSingleBedrijf();
 
-    if($item->bedrijf_id != null){
+    if($item->bedrijf_id != null)
+    {
         // create array
         $bedrijf_arr = array(
             "bedrijf_id" =>  $item->bedrijf_id,
@@ -30,7 +31,8 @@
         echo json_encode($bedrijf_arr);
     }
       
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode("Bedrijf not found.");
     }

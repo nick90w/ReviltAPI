@@ -19,9 +19,12 @@
     $item->melding_boolean = $data->melding_boolean;
     $item->word_afgehandeld = $data->word_afgehandeld;
     
-    if($item->createTafel()){
+    if($item->createTafel())
+    {
         echo 'Vilt created successfully.';
-    } else{
+    } 
+    else
+    {
         echo 'Vilt could not be created.';
     }
 ?>

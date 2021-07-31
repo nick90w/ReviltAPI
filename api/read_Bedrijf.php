@@ -13,16 +13,15 @@
     $stmt = $item->getBedrijfInfo();
     $itemCount = $stmt->rowCount();
 
-
-    //echo json_encode($itemCount);
-
-    if($itemCount > 0){
+    if($itemCount > 0)
+    {
         
         $bedrijfArr = array();
         $bedrijfArr["body"] = array();
         $bedrijfArr["itemCount"] = $itemCount;
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
             extract($row);
             $e = array(
             "Bedrijf_id" =>  $Bedrijf_id,
@@ -36,7 +35,8 @@
         echo json_encode($bedrijfArr);
     }
 
-    else{
+    else
+    {
         http_response_code(404);
         echo json_encode(
             array("message" => "No record found.")

@@ -8,14 +8,11 @@
     include_once '../config/database.php';
     include_once '../class/bedrijf.php';
 
-    //test link: http://localhost/ReviltAPI/api/create_Bedrijf.php?Naam_bedrijf=haha&GebruikersNaam=haha&Password=haha
-
     $database = new Database();
     $db = $database->getConnection();
 
     $item = new Bedrijf($db);
 
-    //$data = json_decode(file_get_contents("php://input"));
     $Naam_bedrijf = $_POST["Naam_bedrijf"];
     $GebruikersNaam = $_POST["GebruikersNaam"];
     $Password = $_POST["Password"];
@@ -24,9 +21,12 @@
     $item->Gebruikersnaam = $GebruikersNaam;
     $item->Password = $Password;
     
-    if($item->createBedrijf()){
+    if($item->createBedrijf())
+    {
         echo 'Bedrijf created successfully.';
-    } else{
+    } 
+    else
+    {
         echo 'Bedrijf could not be created.';
     }
 ?>

@@ -15,13 +15,14 @@
     
     $Bedrijf_id = $_POST["bedrijf_id"];
 
-    //$data = json_decode(file_get_contents("php://input"));
-    
     $item->Bedrijf_id = $Bedrijf_id;
     
-    if($item->deleteBedrijf()){
+    if($item->deleteBedrijf())
+    {
         echo json_encode("Bedrijf deleted.");
-    } else{
+    } 
+    else
+    {
         echo json_encode("Data could not be deleted");
     }
 ?>
